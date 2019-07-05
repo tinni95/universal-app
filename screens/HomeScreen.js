@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import EventCard from '../components/EventCard';
+import AccordionExample from '../components/AccordionExample';
+
 const props = {
   image:"https://cdn.stocksnap.io/img-thumbs/960w/KENRYYSJRK.jpg",
   UserImage: "https://cdn.stocksnap.io/img-thumbs/960w/KENRYYSJRK.jpg",
@@ -29,7 +30,7 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <EventCard {...props}/>
+
         </View>
 
         <View style={styles.getStartedContainer}>
