@@ -1,5 +1,6 @@
 import React from "react";
-import {View, Text, Image, TouchableOpacity} from "react-native";
+import {Platform,StyleSheet,View, Text, Image, TouchableOpacity} from "react-native";
+import { Icon } from 'react-native-elements';
 
 export default class EventCard extends React.Component{
     constructor(props)
@@ -11,7 +12,7 @@ export default class EventCard extends React.Component{
         return(
             <TouchableOpacity>
             <View style={styles.DiscoverContainer}>
-                <Image style={styles.DiscoverImage} source={this.props.image}/>
+                <Image style={styles.DiscoverImage} source={{uri:this.props.image}}/>
                 <Image style={styles.UserImage} source={{uri:this.props.UserImage}}/>
                 <View>
                 <Text style={styles.Title}> {this.props.Title}</Text>
@@ -19,7 +20,7 @@ export default class EventCard extends React.Component{
                 </View>
                 <View style={styles.footer}>
                 <Text style={styles.Location}>@{this.props.Location}</Text>
-                <View style={{flexDirection: 'row',paddingLeft:10,paddingTop:15,justifyContent: 'space-between',}}>
+                <View style={{flexDirection: 'row',paddingLeft:10,paddingTop:15,justifyContent: 'space-between'}}>
                     <View style={{flexDirection:"row"}}>
                     <Icon containerStyle={{marginRight:14,marginTop:-6}} size={30} color="black" name='ios-calendar' type='ionicon' />
                     <Text style={styles.Date}>{this.props.date}</Text>
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     },
     Discover: {
       fontSize:32,
-      width:wp("50%"),
+      width:"100%",
       fontWeight:'bold',
     },
     Title: {

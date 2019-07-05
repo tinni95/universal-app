@@ -11,6 +11,16 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import EventCard from '../components/EventCard';
+const props = {
+  image:"https://cdn.stocksnap.io/img-thumbs/960w/KENRYYSJRK.jpg",
+  UserImage: "https://cdn.stocksnap.io/img-thumbs/960w/KENRYYSJRK.jpg",
+  Title :"test",
+  FullName : "test",
+  Location :"london",
+  date : "24/10/95",
+  time: "20:30"
+}
 
 export default function HomeScreen() {
   return (
@@ -19,14 +29,7 @@ export default function HomeScreen() {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
+          <EventCard {...props}/>
         </View>
 
         <View style={styles.getStartedContainer}>
@@ -122,11 +125,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 30,
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
   },
   welcomeImage: {
     width: 100,
